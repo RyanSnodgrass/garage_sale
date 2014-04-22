@@ -3,10 +3,16 @@
 
 %ul
 - @garbage_items.each do |g|
+	%p name of item
 	%li= g.name
+	%p description of item
 	%li= g.description
+	%p going price
 	%li= g.price
+	%p sold?
 	%li= g.sold
 	%button= link_to "edit", "/garbage_items/#{g.id}/edit"
 	%button= link_to "Sold", "/items/#{g.id}",  {:action => "update", :sold => true, :method => :put }
 	%button= link_to "show", "/garbage_items/#{g.id}"
+	%form
+		%button=link_to "Delete", "/garbage_items/#{g.id}", {:action => "delete", :method => :delete}

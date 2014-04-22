@@ -21,8 +21,18 @@ class GarbageItemsController < ApplicationController
 		redirect_to "/garbage_items"
 	end
 
+	def Sold
+		
+		#redirect_to "/garbage_items"
+	end
 	def show
 		@item= GarbageItem.find(params[:id])
+	end
+
+	def destroy
+		@garbage_item = GarbageItem.find(params[:id])
+		@garbage_item.delete
+		redirect_to "/garbage_items"
 	end
 
 private
