@@ -1,0 +1,12 @@
+%h1 this is the garbage index
+
+
+%ul
+- @garbage_items.each do |g|
+	%li= g.name
+	%li= g.description
+	%li= g.price
+	%li= g.sold
+	%button= link_to "edit", "/garbage_items/#{g.id}/edit"
+	%button= link_to "Sold", "/items/#{g.id}",  {:action => "update", :sold => true, :method => :put }
+	%button= link_to "show", "/garbage_items/#{g.id}"

@@ -1,0 +1,6 @@
+      invoke  active_record
+      create    db/migrate/20140422000653_create_garbage_items.rb
+      create    app/models/garbage_item.rb
+      invoke    test_unit
+      create      test/models/garbage_item_test.rb
+      create      test/fixtures/garbage_items.yml

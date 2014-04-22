@@ -1,0 +1,3 @@
+%h1 this is the edit page
+= form_for @garbage_item, url: "/garbage_items/#{@garbage_item.id}" do |g|
+  = render "form", g: g
