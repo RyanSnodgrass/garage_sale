@@ -11,8 +11,10 @@
 	%li= g.price
 	%p sold?
 	%li= g.sold
+	= form_for g, url: "/garbage_items/#{g.id}", :method => "put" do |f|
+		= f.hidden_field :sold, :value => true
+		= f.submit "Mark Sold"
 	%button= link_to "edit", "/garbage_items/#{g.id}/edit"
-	%button= link_to "Sold", "/items/#{g.id}",  {:action => "update", :sold => true, :method => :put }
 	%button= link_to "show", "/garbage_items/#{g.id}"
 	%form
 		%button=link_to "Delete", "/garbage_items/#{g.id}", {:action => "delete", :method => :delete}

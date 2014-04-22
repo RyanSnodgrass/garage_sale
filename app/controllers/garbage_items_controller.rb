@@ -15,16 +15,19 @@ class GarbageItemsController < ApplicationController
 	def edit
 		@garbage_item = GarbageItem.find(params[:id])
 	end
+	# def update
+	# 	@garbage_item = GarbageItem.find(params[:id])
+	# 	@garbage_item.update_attributes(garbage_item_params)
+	# 	redirect_to "/garbage_items"
+	# end
+
 	def update
 		@garbage_item = GarbageItem.find(params[:id])
-		@garbage_item.update_attributes(garbage_item_params)
-		redirect_to "/garbage_items"
+		if @garbage_item.update_attributes(garbage_item_params)
+			redirect_to "/garbage_items"
+		end	
 	end
-
-	def Sold
-		
-		#redirect_to "/garbage_items"
-	end
+	
 	def show
 		@item= GarbageItem.find(params[:id])
 	end
